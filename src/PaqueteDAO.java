@@ -165,11 +165,11 @@ public class PaqueteDAO {
         }
         System.out.println("");
         
-        PaqueteDAO.escribirPaquete("/tmp/paquete1.bin", paquete);
+        PaqueteDAO.escribirPaquete("C:\\Users\\Raul\\Desktop\\paquete1.bin", paquete);
 
         System.out.println("** Se lee el paquete de /tmp/paquete1.bin y se vuelve a escribir en /tmp/paquete2.bin");
-        Paquete paqueteLeido = PaqueteDAO.leerPaquete("/tmp/paquete1.bin");
-        PaqueteDAO.escribirPaquete("/tmp/paquete2.bin", paqueteLeido);
+        Paquete paqueteLeido = PaqueteDAO.leerPaquete("C:\\Users\\Raul\\Desktop\\paquete1.bin");
+        PaqueteDAO.escribirPaquete("C:\\Users\\Raul\\Desktop\\paquete1.bin", paqueteLeido);
 
 
         System.out.println();
