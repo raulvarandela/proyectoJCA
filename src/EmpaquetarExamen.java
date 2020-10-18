@@ -83,6 +83,7 @@ public class EmpaquetarExamen {
         byte[] firmaCifrada = cifradorRSA.doFinal(resumen);
 
 
+
         /*************************************************************************
          * Crear el paquete
          ************************************************************************/
@@ -94,6 +95,10 @@ public class EmpaquetarExamen {
         examenEmpaquetado.anadirBloque("Firma cifrada", firmaCifrada);
         PaqueteDAO.escribirPaquete(args[1], examenEmpaquetado);
 
+    }
+
+    private static void mostrarBytes(byte [] buffer) {
+        System.out.write(buffer, 0, buffer.length);
     }
 
 }
