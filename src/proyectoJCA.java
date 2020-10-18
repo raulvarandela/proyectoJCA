@@ -27,6 +27,8 @@ public class proyectoJCA {
         ruta_autoridad[0] = "C:\\Users\\Raul\\Documents\\claves\\autoridad\\autoridad";
         GenerarClaves.main(ruta_autoridad);
 
+        System.out.println();
+
 
         /**************************************************
          * Empaquetado del Exmaen
@@ -49,6 +51,18 @@ public class proyectoJCA {
         argSellarExamen[1] = "C:\\Users\\Raul\\Documents\\claves\\alumno\\alumno.publica";
         argSellarExamen[2] = "C:\\Users\\Raul\\Documents\\claves\\autoridad\\autoridad.privada";
         SellarExamen.main(argSellarExamen);
+
+        /**************************************************
+         * Desempaquetado del Exmaen
+         **************************************************/
+
+        String[] argDesempaquetarExamen = new String[5];
+        argDesempaquetarExamen[0] = "C:\\Users\\Raul\\Desktop\\examenEmpaquetado.bin";
+        argDesempaquetarExamen[1] = "C:\\Users\\Raul\\Desktop\\examen_en_claro.txt";
+        argDesempaquetarExamen[2] = "C:\\Users\\Raul\\Documents\\claves\\profesor\\profesor.privada";
+        argDesempaquetarExamen[3] = "C:\\Users\\Raul\\Documents\\claves\\alumno\\alumno.publica";
+        argDesempaquetarExamen[4] = "C:\\Users\\Raul\\Documents\\claves\\autoridad\\autoridad.publica";
+        DesempaquetarExamen.main(argDesempaquetarExamen);
 
     }
 }

@@ -1,17 +1,13 @@
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
 import javax.crypto.Cipher;
-import javax.xml.crypto.Data;
-import java.lang.reflect.Array;
 import java.security.MessageDigest;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 import java.security.Security;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
-import java.util.Date;
+
 
 /**
  * @autor Raúl Varandela Marra
@@ -52,20 +48,22 @@ public class SellarExamen {
          */
 
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        byte[] examenCifrado = examenEmpaquetado.getContenidoBloque(examenEmpaquetado.getNombresBloque().get(0)); //recuperamos el examen del paquete
-        byte[] claveCifrada = examenEmpaquetado.getContenidoBloque(examenEmpaquetado.getNombresBloque().get(1)); // y la calve
+        byte[] claveCifrada = examenEmpaquetado.getContenidoBloque(examenEmpaquetado.getNombresBloque().get(0)); // se recupera la calve
+        byte[] examenCifrado = examenEmpaquetado.getContenidoBloque(examenEmpaquetado.getNombresBloque().get(1)); //se recupera el examen del paquete
 
-        messageDigest.update(claveCifrada);
+
         messageDigest.update(examenCifrado);
+        messageDigest.update(claveCifrada);
+
 
         byte[] resumenRecibido = messageDigest.digest();
 
 
         //comparamos los resumenes
         if (Arrays.equals(resumenEnviado, resumenRecibido)) {
-            System.out.println("Los resumenes coinciden, todo correcto :)");
+            System.out.println("AUTORIDAD: Los resumenes coinciden, todo correcto :)");
         } else {
-            System.out.println("Los resumenes no coinciden :(");
+            System.out.println("AUTORIDAD: Los resumenes no coinciden :(");
             System.exit(1);
         }
 
@@ -93,8 +91,7 @@ public class SellarExamen {
         //se añade al paquete el nuevo contenido
         examenEmpaquetado.anadirBloque("Fecha", fechaActual);
         examenEmpaquetado.anadirBloque("Sello", selloCifrado);
-        PaqueteDAO.escribirPaquete(args[0],examenEmpaquetado);
-
+        PaqueteDAO.escribirPaquete(args[0], examenEmpaquetado);
 
     }
 
