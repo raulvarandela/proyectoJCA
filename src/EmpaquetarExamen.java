@@ -1,6 +1,7 @@
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 16/10/2020
+ * Descripción: Usado por el alumno para empaquetar el examen
  */
 
 
@@ -94,6 +95,8 @@ public class EmpaquetarExamen {
         examenEmpaquetado.anadirBloque("Clave secreta cifrada", salidaRSA);
         examenEmpaquetado.anadirBloque("Firma cifrada", firmaCifrada);
         PaqueteDAO.escribirPaquete(args[1], examenEmpaquetado);
+
+        System.out.println("ALUMNO: El examen ha sido empaquetado");
 
     }
 

@@ -12,6 +12,7 @@ import java.util.Arrays;
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 16/10/2020
+ * Descripción: Clase usada por la autoridad para comprobar que los datos no han sido modificados e incluir la fecha
  */
 
 public class SellarExamen {

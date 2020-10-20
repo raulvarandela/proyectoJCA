@@ -1,6 +1,7 @@
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 16/10/2020
+ * Descripción: Clase utilizada para simplificar la ejecución. Desde ella se ejecutan todas las necesarias para el proyecto
  */
 
 

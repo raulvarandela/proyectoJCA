@@ -13,6 +13,7 @@ import java.util.Arrays;
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 16/10/2020
+ * Descripción: Usado por el profesor para desempaquetar el examen y comprobar si los datos han sido cambiados
  */
 
 public class DesempaquetarExamen {

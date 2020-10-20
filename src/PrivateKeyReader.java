@@ -7,6 +7,7 @@ import java.security.spec.PKCS8EncodedKeySpec;
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 17/10/2020
+ * Descripción: Clase usada para leer las claves privadas desde disco
  */
 
 public class PrivateKeyReader {

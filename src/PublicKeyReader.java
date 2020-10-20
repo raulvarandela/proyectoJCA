@@ -7,6 +7,7 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * @autor Raúl Varandela Marra
  * Fecha: 17/10/2020
+ * Descripción: Clase usada para leer las claves publicas desde disco
  */
 
 public class PublicKeyReader {
