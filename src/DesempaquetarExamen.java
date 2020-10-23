@@ -86,7 +86,7 @@ public class DesempaquetarExamen {
         if (Arrays.equals(resumenRecibidoAutoridad, resumenEnviadoAutoridad)) {
             System.out.println("PROFESOR: Los resumenes de la autoridad coinciden, todo correcto :)");
             System.out.print("PROFESOR: La fecha del sellado es: ");
-            mostrarBytes(fecha);
+            mostarFecha(fecha);
         } else {
             System.out.println("PROFESOR: Los resumenes de la autoridad no coinciden :(");
             System.exit(1);
@@ -114,7 +114,7 @@ public class DesempaquetarExamen {
 
     }
 
-    private static void mostrarBytes(byte[] buffer) {
-        System.out.write(buffer, 0, buffer.length);
+    private static void mostarFecha(byte[] buffer) {
+        System.out.println(new String(buffer));
     }
 }

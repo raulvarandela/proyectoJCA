@@ -6,6 +6,9 @@
 
 
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.security.*;
 import javax.crypto.*;
 import java.io.*;
@@ -40,16 +43,12 @@ public class EmpaquetarExamen {
         byte[] bufferCifrado;
 
         //leemos el examen
-        FileInputStream in = new FileInputStream(args[0]);
-        FileOutputStream out = new FileOutputStream(args[0] + ".cifrado");
 
-        buffer = in.readAllBytes();
+
+        buffer = Files.readAllBytes(Path.of(args[0]));
 
         bufferCifrado = cifrador.doFinal(buffer); // Completar cifrado
-        out.write(bufferCifrado); // Escribimos el examen cifrado
 
-        in.close();
-        out.close();
 
 
         /*************************************************************************
